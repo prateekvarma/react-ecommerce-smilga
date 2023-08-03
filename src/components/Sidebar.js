@@ -18,19 +18,19 @@ const Sidebar = () => {
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="comfy sloth" />
           <button className="close-btn" type="button">
-            <FaTimes />
+            <FaTimes onClick={closeSidebar} />
           </button>
         </div>
         <ul className="links">
           {links.map(({ id, text, url }) => {
             return (
-              <li key={id}>
+              <li key={id} onClick={closeSidebar}>
                 <Link to={url}>{text}</Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout">Checkout</Link>
+            <Link to="/checkout" onClick={closeSidebar}>Checkout</Link>
           </li>
         </ul>
         <CartButtons />
